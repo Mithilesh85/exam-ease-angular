@@ -1,0 +1,39 @@
+@use "@angular/material" as mat;
+
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 0 10px;
+}
+
+.form-container {
+  @include mat.elevation(5);
+  display: block;
+  max-width: 400px;
+  background: #eceff1;
+  padding: 48px;
+  border-radius: 16px;
+
+  mat-form-field {
+    width: 100%;
+  }
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.margin-top {
+  margin-top: 16px !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.sign-up-link {
+  margin-left: 8px;
+}

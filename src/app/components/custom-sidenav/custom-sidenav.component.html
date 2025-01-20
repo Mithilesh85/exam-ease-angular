@@ -1,0 +1,33 @@
+<div class="side-nav-header">
+  <img
+    src="img/my pic.jpg"
+    alt="user_pic"
+    [height]="imgWidth()"
+    [width]="imgWidth()"
+  />
+  <div class="header-text" [class.hide-nav-header-text]="collapse()">
+    <h2>How to code</h2>
+    <p>Mithu Shah</p>
+  </div>
+</div>
+<mat-nav-list>
+  @for (item of menuItems(); track item.route) {
+  <a
+    mat-list-item
+    class="menu-items"
+    [routerLink]="item.route"
+    routerLinkActive="selected-menu-items"
+    #rla="routerLinkActive"
+    [activated]="rla.isActive"
+  >
+    <mat-icon
+      matListItemIcon
+      [fontSet]="rla.isActive ? 'material-icons' : 'material-icons-outlined'"
+      >{{ item.icon }}</mat-icon
+    >
+    @if (!collapse()) {
+    <span matListItemTitle>{{ item.label }}</span>
+    }
+  </a>
+  }
+</mat-nav-list>

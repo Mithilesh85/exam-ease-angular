@@ -1,0 +1,60 @@
+@use "@angular/material" as mat;
+
+:host * {
+  transition: all 500ms ease-in-out;
+}
+
+.side-nav-header {
+  padding-top: 24px;
+  text-align: center;
+
+  img {
+    border-radius: 100%;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+
+  .header-text {
+    height: 3rem;
+    h2 {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+
+    p {
+      margin: 0;
+      font-size: 0.8rem;
+    }
+  }
+
+  .hide-nav-header-text {
+    opacity: 0;
+    height: 0;
+  }
+}
+
+.menu-items {
+  border-left: 5px solid;
+  border-left-color: rgba(0, 0, 0, 0);
+
+  @include mat.list-overrides(
+    (
+      active-indicator-shape: 0px,
+      list-item-one-line-container-height: 56px,
+    )
+  );
+}
+
+.selected-menu-items {
+  border-left-color: var(--primary-color);
+  @include mat.list-overrides(
+    (
+      list-item-leading-icon-color: var(--primary-color),
+      list-item-hover-leading-icon-color: var(--primary-color),
+      list-item-label-text-color: var(--primary-color),
+      list-item-hover-label-text-color: var(--primary-color),
+      list-item-focus-label-text-color: var(--primary-color),
+    )
+  );
+}
